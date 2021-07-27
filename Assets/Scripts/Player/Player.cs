@@ -1,5 +1,4 @@
-﻿using System;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class Player : SingletonMonobehaviour<Player>
 {
@@ -66,7 +65,7 @@ public class Player : SingletonMonobehaviour<Player>
                 isSwingingToolRight, isSwingingToolLeft, isSwingingToolUp, isSwingingToolDown,
                 false, false, false, false);
 
-        #endregion
+        #endregion PlayerInput
     }
 
     private void FixedUpdate()
@@ -77,7 +76,7 @@ public class Player : SingletonMonobehaviour<Player>
     private void PlayerMovement()
     {
         Vector2 move = new Vector2(xInput * movementSpeed * Time.deltaTime, yInput * movementSpeed * Time.deltaTime);
-        rigidbody2D.MovePosition(rigidbody2D.position + move);        
+        rigidbody2D.MovePosition(rigidbody2D.position + move);
     }
 
     private void PlayerWalkInput()
@@ -132,9 +131,8 @@ public class Player : SingletonMonobehaviour<Player>
             else
             {
                 playerDirection = Direction.up;
-            }            
+            }
         }
-
         else if (xInput == 0 && yInput == 0)
         {
             isRunning = false;
