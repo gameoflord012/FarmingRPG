@@ -30,20 +30,21 @@ public class Player : SingletonMonobehaviour<Player>
     public bool idleLeft;
     public bool idleRight;
 
-    private Rigidbody2D rigidbody2D;
+    private Rigidbody2D rb2D;
 
+#pragma warning disable 414
     private Direction playerDirection;
+    private bool _playerInputIsDisabled = false;
+#pragma warning restore 414
 
     private float movementSpeed;
-
-    private bool _playerInputIsDisabled = false;
 
     public bool PlayerInputIsDisabled { get => PlayerInputIsDisabled; set { PlayerInputIsDisabled = value; } }
 
     protected override void Awake()
     {
         base.Awake();
-        rigidbody2D = GetComponent<Rigidbody2D>();
+        rb2D = GetComponent<Rigidbody2D>();        
     }
 
     private void Update()
@@ -76,7 +77,7 @@ public class Player : SingletonMonobehaviour<Player>
     private void PlayerMovement()
     {
         Vector2 move = new Vector2(xInput * movementSpeed * Time.deltaTime, yInput * movementSpeed * Time.deltaTime);
-        rigidbody2D.MovePosition(rigidbody2D.position + move);
+        rb2D.MovePosition(rb2D.position + move);
     }
 
     private void PlayerWalkInput()

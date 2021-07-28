@@ -345,6 +345,50 @@ MonoBehaviour:
   m_CameraActivatedEvent:
     m_PersistentCalls:
       m_Calls: []
+--- !u!1 &928542279
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 928542281}
+  - component: {fileID: 928542280}
+  m_Layer: 0
+  m_Name: InventoryManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &928542280
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 928542279}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 888bf416fdbb59241a46188765f15e8b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemList: {fileID: 11400000, guid: 2506d3920c646b8459121a781d1ae038, type: 2}
+--- !u!4 &928542281
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 928542279}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -20.40312, y: 2.6293695, z: -17.820312}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1683045893
 GameObject:
   m_ObjectHideFlags: 0
@@ -601,11 +645,13 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2567253499561041930}
+  - component: {fileID: 2693070560661444828}
   - component: {fileID: 9205982367607039633}
   - component: {fileID: 2693126002298010389}
   - component: {fileID: 2693070560661444827}
   - component: {fileID: 2693070560661444826}
-  - component: {fileID: 2693070560661444828}
+  - component: {fileID: 2693070560661444829}
+  - component: {fileID: 2693070560661444830}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -717,6 +763,30 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.7322599, y: 0.1}
   m_EdgeRadius: 0
+--- !u!114 &2693070560661444829
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2693070560661444825}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 00668a5155fa58b41aa40a3862a5200c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &2693070560661444830
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2693070560661444825}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b4c1ed19b2d46c242a9b7938f68ade16, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!210 &2693126002298010389
 SortingGroup:
   m_ObjectHideFlags: 0
