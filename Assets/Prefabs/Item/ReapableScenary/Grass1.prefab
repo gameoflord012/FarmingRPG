@@ -12,6 +12,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Grass1
       objectReference: {fileID: 0}
+    - target: {fileID: 1177877178760318639, guid: 441a2953fd4ea4743ab5e44ff0ae31dd,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2845854925020621088, guid: 441a2953fd4ea4743ab5e44ff0ae31dd,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -30,17 +35,17 @@ PrefabInstance:
     - target: {fileID: 2845854925020621088, guid: 441a2953fd4ea4743ab5e44ff0ae31dd,
         type: 3}
       propertyPath: m_LocalRotation.x
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2845854925020621088, guid: 441a2953fd4ea4743ab5e44ff0ae31dd,
         type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2845854925020621088, guid: 441a2953fd4ea4743ab5e44ff0ae31dd,
         type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2845854925020621088, guid: 441a2953fd4ea4743ab5e44ff0ae31dd,
         type: 3}
@@ -81,6 +86,11 @@ PrefabInstance:
     - target: {fileID: 8478004349253607001, guid: 441a2953fd4ea4743ab5e44ff0ae31dd,
         type: 3}
       propertyPath: m_WasSpriteAssigned
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8478004349253607001, guid: 441a2953fd4ea4743ab5e44ff0ae31dd,
+        type: 3}
+      propertyPath: m_SpriteSortPoint
       value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []

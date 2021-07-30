@@ -30,6 +30,8 @@ public class Player : SingletonMonobehaviour<Player>
     public bool idleLeft;
     public bool idleRight;
 
+    private Camera mainCamera;
+
     private Rigidbody2D rb2D;
 
 #pragma warning disable 414
@@ -44,7 +46,8 @@ public class Player : SingletonMonobehaviour<Player>
     protected override void Awake()
     {
         base.Awake();
-        rb2D = GetComponent<Rigidbody2D>();        
+        rb2D = GetComponent<Rigidbody2D>();
+        mainCamera = Camera.main;
     }
 
     private void Update()
@@ -161,5 +164,10 @@ public class Player : SingletonMonobehaviour<Player>
         isSwingingToolUp = false;
         isSwingingToolDown = false;
         toolEffect = ToolEffect.none;
+    }
+
+    public Vector3 GetPlayerViewportPosition()
+    {
+        return mainCamera.WorldToViewportPoint(transform.position);
     }
 }

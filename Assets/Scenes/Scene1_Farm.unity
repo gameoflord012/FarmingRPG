@@ -53049,32 +53049,32 @@ PrefabInstance:
     - target: {fileID: 2237750963426360145, guid: 1128b01917e6bf44db2866056df2c48b,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -3.9227395
+      value: -1.01
       objectReference: {fileID: 0}
     - target: {fileID: 2237750963426360145, guid: 1128b01917e6bf44db2866056df2c48b,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -1.0135555
+      value: 1.62
       objectReference: {fileID: 0}
     - target: {fileID: 2237750963426360145, guid: 1128b01917e6bf44db2866056df2c48b,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 11.154297
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2237750963426360145, guid: 1128b01917e6bf44db2866056df2c48b,
         type: 3}
       propertyPath: m_LocalRotation.x
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2237750963426360145, guid: 1128b01917e6bf44db2866056df2c48b,
         type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2237750963426360145, guid: 1128b01917e6bf44db2866056df2c48b,
         type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2237750963426360145, guid: 1128b01917e6bf44db2866056df2c48b,
         type: 3}
@@ -53105,6 +53105,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Corn (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 5609087467518741544, guid: 1128b01917e6bf44db2866056df2c48b,
+        type: 3}
+      propertyPath: m_SpriteSortPoint
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1128b01917e6bf44db2866056df2c48b, type: 3}
