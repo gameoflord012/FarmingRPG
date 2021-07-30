@@ -80,6 +80,26 @@ public class InventoryManager : SingletonMonobehaviour<InventoryManager>
         EventHandler.CallInventoryUpdatedEvent(inventoryLocation, inventoryLists[(int)inventoryLocation]);
     }
 
+    private void AddItemAtPosition(List<InventoryItem> inventoryList, int itemCode)
+    {
+        InventoryItem inventoryItem = new InventoryItem();
+        inventoryItem.itemCode = itemCode;
+        inventoryItem.itemQuantity = 1;
+        inventoryList.Add(inventoryItem);
+
+        DebugPrintInventoryList(inventoryList);
+    }
+
+    private void AddItemAtPosition(List<InventoryItem> inventoryList, int itemCode, int itemPosition)
+    {
+        InventoryItem inventoryItem = new InventoryItem();
+        inventoryItem.itemCode = itemCode;
+        inventoryItem.itemQuantity = inventoryList[itemPosition].itemQuantity + 1;
+        inventoryList[itemPosition] = inventoryItem;
+
+        DebugPrintInventoryList(inventoryList);
+    }
+
     private int FindItemInInventory(List<InventoryItem> inventoryList, int itemCode)
     {
         for(int i = 0; i < inventoryList.Count; i++)
@@ -90,32 +110,40 @@ public class InventoryManager : SingletonMonobehaviour<InventoryManager>
             }
         }
         return -1;
-    }
-
-    private void AddItemAtPosition(List<InventoryItem> inventoryList, int itemCode)
-    {
-        InventoryItem inventoryItem = new InventoryItem();
-        inventoryItem.itemCode = itemCode;
-        inventoryItem.itemQuantity = 1;
-        inventoryList.Add(inventoryItem);
-
-        DebugPrintInventoryList(inventoryList);
     }    
 
-    private void AddItemAtPosition(List<InventoryItem> inventoryList, int itemCode, int itemPosition)
+    public void RemoveItem(InventoryLocation inventoryLocation, int itemCode)
     {
-        InventoryItem inventoryItem = new InventoryItem();
-       
-        inventoryItem.itemCode = itemCode;
-        inventoryItem.itemQuantity = inventoryList[itemPosition].itemQuantity + 1;
-        inventoryList[itemPosition] = inventoryItem;
+        List<InventoryItem> inventoryList = inventoryLists[(int)inventoryLocation];
+        int itemPosition = FindItemInInventory(inventoryList, itemCode);
+        if (itemPosition == -1) return;
+        RemoveItemAtPosition(inventoryLocation, itemCode, itemPosition);
+    }
 
+    private void RemoveItemAtPosition(InventoryLocation inventoryLocation, int itemCode, int itemPosition)
+    {
+        List<InventoryItem> inventoryList = inventoryLists[(int)inventoryLocation];
+
+        InventoryItem inventoryItem = new InventoryItem();
+        inventoryItem.itemCode = itemCode;
+        inventoryItem.itemQuantity = inventoryList[itemPosition].itemQuantity - 1;
+
+        if(inventoryItem.itemQuantity == 0)
+        {
+            inventoryList.RemoveAt(itemPosition);
+        }
+        else
+        {
+            inventoryList[itemPosition] = inventoryItem;
+        }
+
+        EventHandler.CallInventoryUpdatedEvent(inventoryLocation, inventoryList);
         DebugPrintInventoryList(inventoryList);
     }
 
     private void DebugPrintInventoryList(List<InventoryItem> inventoryList)
     {
-        foreach(InventoryItem inventoryItem in inventoryList)
+        foreach (InventoryItem inventoryItem in inventoryList)
         {
             Debug.Log($"Description : {GetItemDetails(inventoryItem.itemCode).itemDescription}                 ||               Quantity : {inventoryItem.itemQuantity}");
         }
